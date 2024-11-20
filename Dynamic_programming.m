@@ -273,35 +273,35 @@ end
 graph_title = 'Gantt Chart for Job Scheduling';
 
 gantt_scheduling(startTime, completionTime, n_machines, n_jobs, graph_title);
+ 
+ 
+max_time = max(completionTime(:)); 
+xticks(1:max_time); 
+yticks(1:n_machines);
+yticklabels(arrayfun(@(x) sprintf('Laser Cutter %d', x), 1:n_machines, 'UniformOutput', false));
+ 
+ax = gca;
+ax.YGrid = 'on';  
+ax.XGrid = 'on'; 
 % 
-% 
-% max_time = max(completionTime(:)); 
-% xticks(1:max_time); 
-% yticks(1:n_machines);
-% yticklabels(arrayfun(@(x) sprintf('Laser Cutter %d', x), 1:n_machines, 'UniformOutput', false));
-% 
-% ax = gca;
-% ax.YGrid = 'on';  
-% ax.XGrid = 'on'; 
-% 
-% legend('show'); 
-% legend('-DynamicLegend'); 
-% 
-% for i = 1:n_jobs
-%     resource_idx = sorted_job_on_resource(i);
-%     start_x = startTime(i, resource_idx);
-%     end_x = completionTime(i, resource_idx);
-% 
-%     text_x = (start_x + end_x) / 2;  
-%     text_y = resource_idx;    
-% 
-%     job_name = sprintf('Job %d', sorted_batch_id(i)); 
-%     text(text_x, text_y, job_name, 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'FontSize', 10);
-% end
-% 
-% lines = findobj(gca, 'Type', 'Line');
-% for i = 1:length(lines)
-%     lines(i).LineWidth = 60; 
-% end
+legend('show'); 
+legend('-DynamicLegend'); 
+ 
+for i = 1:n_jobs
+    resource_idx = sorted_job_on_resource(i);
+    start_x = startTime(i, resource_idx);
+    end_x = completionTime(i, resource_idx);
+ 
+    text_x = (start_x + end_x) / 2;  
+    text_y = resource_idx;    
+
+    job_name = sprintf('Job %d', sorted_batch_id(i)); 
+    text(text_x, text_y, job_name, 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'FontSize', 10);
+end
+ 
+lines = findobj(gca, 'Type', 'Line');
+for i = 1:length(lines)
+    lines(i).LineWidth = 60; 
+end
 
 
