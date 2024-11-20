@@ -162,50 +162,50 @@ close(conn);
 
 
 
-% %% GANTT SCHEDULING
-% 
-% J = n_jobs;
-% M = n_laser;
-% 
-% startTime = zeros(J, M);
-% completionTime = zeros(J, M);
-% 
-% for i = 1:J
-%     resource = sorted_job_on_resource_math(i);
-%     startTime(i, resource) = sorted_start_time_math(i);
-%     completionTime(i, resource) = sorted_completion_time_math(i);
-% end
-% 
-% graph_title = 'Diagramma di Gantt - Distribuzione dei Job sui Laser Cutter';
-% 
-% gantt_scheduling(startTime, completionTime, M, J, graph_title);
-% 
-% 
-% max_time = max(completionTime(:)); 
-% xticks(1:max_time); 
-% yticks(1:M);
-% yticklabels(arrayfun(@(x) sprintf('Laser %d', x), 1:M, 'UniformOutput', false));
-% 
-% ax = gca;
-% ax.YGrid = 'on';  
-% ax.XGrid = 'on'; 
-% 
-% for i = 1:J
-%     resource_idx = sorted_job_on_resource_math(i);
-%     start_x = startTime(i, resource_idx);
-%     end_x = completionTime(i, resource_idx);
-% 
-%     text_x = (start_x + end_x) / 2;  
-%     text_y = resource_idx;    
-% 
-%     job_name = sprintf('Job %d', i); 
-%     text(text_x, text_y, job_name, 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'FontSize', 10);
-% end
-% 
-% lines = findobj(gca, 'Type', 'Line');
-% for i = 1:length(lines)
-%     lines(i).LineWidth = 60; 
-% end
+%% GANTT SCHEDULING
+ 
+J = n_jobs;
+M = n_laser;
+ 
+startTime = zeros(J, M);
+completionTime = zeros(J, M);
+ 
+for i = 1:J
+    resource = sorted_job_on_resource_math(i);
+    startTime(i, resource) = sorted_start_time_math(i);
+    completionTime(i, resource) = sorted_completion_time_math(i);
+end
+ 
+graph_title = 'Diagramma di Gantt - Distribuzione dei Job sui Laser Cutter';
+ 
+gantt_scheduling(startTime, completionTime, M, J, graph_title);
+ 
+ 
+max_time = max(completionTime(:)); 
+xticks(1:max_time); 
+yticks(1:M);
+yticklabels(arrayfun(@(x) sprintf('Laser %d', x), 1:M, 'UniformOutput', false));
+ 
+ax = gca;
+ax.YGrid = 'on';  
+ax.XGrid = 'on'; 
+ 
+for i = 1:J
+    resource_idx = sorted_job_on_resource_math(i);
+    start_x = startTime(i, resource_idx);
+    end_x = completionTime(i, resource_idx);
+
+    text_x = (start_x + end_x) / 2;  
+    text_y = resource_idx;    
+
+    job_name = sprintf('Job %d', sorted_batch_id_math(i)); 
+    text(text_x, text_y, job_name, 'HorizontalAlignment', 'center', 'VerticalAlignment', 'bottom', 'FontSize', 10);
+end
+ 
+lines = findobj(gca, 'Type', 'Line');
+for i = 1:length(lines)
+    lines(i).LineWidth = 60; 
+end
 
 
 
