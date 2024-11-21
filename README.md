@@ -1,7 +1,6 @@
 # Dynamic_and_Math_Scheduling
 
-
-This project focuses on scheduling N jobs across 3 parallel machines, optimizing the process to **minimize the number of late jobs**. It is implemented in **MATLAB** and compares the performance of two approaches:  
+This project focuses on scheduling N jobs across 3 parallel machines, optimizing the process to minimize the number of late jobs. It is implemented in **MATLAB** and compares the performance of two approaches:  
 1. **Dynamic Programming**  
 2. **Mathematical Programming**
 
@@ -25,40 +24,56 @@ Finally, the `comparison_results` file compares the performance of the two algor
 
 ---
 
+### Windows Users
 
-
-## Database Setup
-
-### Creating the Database
-
-1. **On macOS**:  
-   - Create the database via the **Azure web portal**.  
-   - Connect to the database using **Azure Data Studio**.  
-
-2. **Connecting from MATLAB**:  
-   - Open MATLAB and search for the **Database Explorer** app.  
-   - Configure a new connection with the details of your Azure database.
+1. **Database Setup**:
+  - Install **SQL Server Management Studio (SSMS)** for database management.
+  - Use **Microsoft Azure** to create the relational SQL database.
+    
+2. **MATLAB Configuration**:
+  - Open MATLAB and install the required toolboxes via the **Add-Ons** menu.
+  - Use the **Database Explorer** app to configure a connection with your Azure database.
+  - Ensure the `ODBC Data Source Administrator` is properly set up for communication between MATLAB and Azure SQL.
+    
+3. **Drivers**:
+  - Install the latest **ODBC Driver for SQL Server**.
+    
+4. **Optional**:
+  - Use **PowerShell** to interact with Azure if needed for advanced configurations.
 
 ---
 
+### MacOS Users
 
+1. **Database Setup**:
+  - Use the **Azure web portal** to create the relational SQL database.
+  - Install **Azure Data Studio** for database management.
+    
+2. **MATLAB Configuration**:
+  - Open MATLAB and install the required toolboxes via the **Add-Ons** menu.
+  - Use the **Database Explorer** app to configure a connection with your Azure database.
+  - Ensure you have the **ODBC Manager for macOS** installed and configured to connect to Azure SQL.
+    
+3. **Drivers**:
+  - Install the latest **ODBC Driver for SQL Server** for macOS.
+
+---
 
 ## Requirements
 
 ### MATLAB
 To run this project, ensure the following toolboxes and apps are added to your MATLAB installation:  
-- **Database Toolbox**  
-- **Optimization Toolbox**  
-- **Gantt Chart for Scheduling Problems**  
-- **Maximally Distinct Color Generator**  
-- **Legend Unq**  
+- Database Toolbox
+- Optimization Toolbox
+- Gantt Chart for Scheduling Problems
+- Maximally Distinct Color Generator**  
+- Legend Unq  
 
 ### Database 
-- **Azure Data Studio** for managing the database.  
-- **Relational SQL Database** (e.g., Azure SQL).  
+- Azure Data Studio for managing the database.  
+- Relational SQL Database (e.g., Azure SQL).  
 
 ---
-
 
 ## How to Use the Project
 
@@ -71,6 +86,12 @@ To run this project, ensure the following toolboxes and apps are added to your M
 
 3. **Compare Results**:  
    Use `comparison_results.m` to compare the performance of both approaches.
+   
+--- 
+
+## Acknowledgments
+
+This project was developed to analyze and improve scheduling methodologies as part of the academic exam [Industrial Automation](https://corsi.unige.it/off.f/2021/ins/51470) during Master's degree in Computer Engineering at the University of Genova.
 
 ---
 
