@@ -22,8 +22,6 @@ Each algorithm computes the optimal job sequence, producing:
 
 Finally, the `comparison_results` file compares the performance of the two algorithms.
 
----
-
 ### Windows Users
 
 1. **Database Setup**:
@@ -41,8 +39,6 @@ Finally, the `comparison_results` file compares the performance of the two algor
 4. **Optional**:
   - Use **PowerShell** to interact with Azure if needed for advanced configurations.
 
----
-
 ### MacOS Users
 
 1. **Database Setup**:
@@ -56,8 +52,6 @@ Finally, the `comparison_results` file compares the performance of the two algor
     
 3. **Drivers**:
   - Install the latest **ODBC Driver for SQL Server** for macOS.
-
----
 
 ## Requirements
 
@@ -73,8 +67,6 @@ To run this project, ensure the following toolboxes and apps are added to your M
 - Azure Data Studio for managing the database.  
 - Relational SQL Database (e.g., Azure SQL).  
 
----
-
 ## How to Use the Project
 
 1. **Generate Job Data**:  
@@ -86,8 +78,6 @@ To run this project, ensure the following toolboxes and apps are added to your M
 
 3. **Compare Results**:  
    Use `comparison_results.m` to compare the performance of both approaches.
-   
---- 
 
 ## Acknowledgments
 
