@@ -22,7 +22,7 @@ Each algorithm computes the optimal job sequence, producing:
 
 Finally, the `comparison_results` file compares the performance of the two algorithms.
 
-### Windows Users
+## Windows Users
 
 1. **Database Setup**:
   - Install **SQL Server Management Studio (SSMS)** for database management.
@@ -39,7 +39,7 @@ Finally, the `comparison_results` file compares the performance of the two algor
 4. **Optional**:
   - Use **PowerShell** to interact with Azure if needed for advanced configurations.
 
-### MacOS Users
+## MacOS Users
 
 1. **Database Setup**:
   - Use the **Azure web portal** to create the relational SQL database.
