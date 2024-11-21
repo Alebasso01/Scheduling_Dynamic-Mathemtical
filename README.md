@@ -47,11 +47,10 @@ Finally, the `comparison_results` file compares the performance of the two algor
     
 2. **MATLAB Configuration**:
   - Open MATLAB and install the required toolboxes via the **Add-Ons** menu.
+  - Download the mssql-jdbc-12.8.1.jre8.jar (or similar)
   - Use the **Database Explorer** app to configure a connection with your Azure database.
-  - Ensure you have the **ODBC Manager for macOS** installed and configured to connect to Azure SQL.
+  - Set up the JDBC connection in Database Explorer, specifying the full path to the .jar file in the Driver Location, Server name and Database name in Connection Parameters
     
-3. **Drivers**:
-  - Install the latest **ODBC Driver for SQL Server** for macOS.
 
 ## Requirements
 
